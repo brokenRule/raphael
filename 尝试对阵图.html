@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            margin: 30px auto;
+            width: 1000px;
+            min-height: 500px;
+            border: 1px solid lightgray;
+            list-style: none;
+            position: relative;
+        }
+        .container>li{
+            display: inline-block;
+            position: absolute;
+            overflow: hidden;
+        }
+        .container>li .item{
+            height: 90px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            clear: both;
+        }
+        .container>li .item .name{
+            border-right: 1px solid #CED4D9;
+            width: 228px;
+            height: 100%;
+            float: left;
+            background: #F5F7F9;
+            border-radius: 6px 0 0 6px;
+            box-shadow: 0 1px 1px 0 rgba(107,107,107,0.50);
+        }
+        .container>li .item .name span,.container>li .item .num span{
+            display: block;
+            line-height: 45px;
+            height: 45px;
+            font-size: 22px;
+            color: #646464;
+        }
+        .container>li .item .name span:first-of-type{
+            border-bottom: 1px solid #CED4D9;
+            height: 44px;
+            line-height: 44px;
+        }
+        .container>li .item .num,.container>li .item .warn{
+            width: 40px;
+            height: 100%;
+            float: left;
+            background: #EAEDF0;
+            border-radius: 0px 6px  6px 0px;
+            box-shadow: 0 1px 1px 0 rgba(107,107,107,0.50);
+        }
+        .container>li .item .name span{
+            padding-left: 11px;
+        }
+        .container>li .item .name span.win{
+            background: #66BA71;
+            border-radius: 6px 0 0 0;
+            color: #ffffff;
+        }
+        .container>li .item .num span{
+            width: 40px;
+            text-align: center;
+        }
+        .container>li .item .warn{
+            background: #D55C68;
+            color: #FFFFFF;
+            text-align: center;
+            cursor: pointer;
+        }
+        .container>li .item .warn span{
+            font-size: 22px;
+            line-height: 24px;
+            display: block;
+            padding: 21px 0px;
+        }
+        .container>li .item .line{
+            width: 36px;
+            float: left;
+            height: 90px;
+            line-height: 90px;
+            vertical-align: middle;
+            position: relative;
+        }
+        .container>li .item .line span{
+            background:  #cacaca;
+            width: 36px;
+            height: 1px;
+            display: block;
+            position: absolute;
+            left: 0px;
+            top:50%;
+        }
+        .container>li .split{
+            width: 1px;
+            float: left;
+            height: 114px;
+            position: absolute;
+            background:  #cacaca;
+        }
+        .hidden{
+            display: none;
+        }
+
+        .container>li:nth-of-type(2){
+            top: 53px;
+            left: 368px;
+        }
+        .container>li:nth-of-type(3){
+            top: 300px;
+            left: 600px;
+        }
+        .container>li:nth-of-type(2) .item{
+            margin-bottom: 138px;
+        }
+        .container>li:nth-of-type(3) .item{
+            margin-bottom: 365px;
+        }
+    </style>
+    <script src="jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<ul class="container">
+    <li class="firstColumn" data-column="1" data-num="4">
+        <div class="item">
+            <div class="name">
+               <span class="win">安曼迪克</span>
+               <span>鹿邑三大</span>
+            </div>
+            <div class="num">
+                <span>2</span>
+                <span>0</span>
+            </div>
+            <div class="line">
+                <span></span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="name">
+                <span>安曼迪克11</span>
+                <span>鹿邑三大11</span>
+            </div>
+            <div class="num hidden">
+                <span>2</span>
+                <span>0</span>
+            </div>
+            <div class="warn">
+                <span>出错</span>
+            </div>
+            <div class="line">
+                <span></span>
+            </div>
+        </div>
+        <div class="split">
+        </div>
+        <div class="item">
+            <div class="name">
+                <span class="win">安曼迪克</span>
+                <span>鹿邑三大</span>
+            </div>
+            <div class="num">
+                <span>2</span>
+                <span>0</span>
+            </div>
+            <div class="line">
+                <span></span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="name">
+                <span>安曼迪克11</span>
+                <span>鹿邑三大11</span>
+            </div>
+            <div class="num hidden">
+                <span>2</span>
+                <span>0</span>
+            </div>
+            <div class="warn">
+                <span>出错</span>
+            </div>
+            <div class="line">
+                <span></span>
+            </div>
+        </div>
+        <div class="split">
+        </div>
+    </li>
+    <li data-column="2" data-num="2">
+        <div class="item">
+        <div class="line">
+            <span></span>
+        </div>
+        <div class="name">
+            <span class="win">安曼迪克</span>
+            <span>鹿邑三大</span>
+        </div>
+        <div class="num">
+            <span>2</span>
+            <span>0</span>
+        </div>
+        <div class="line">
+            <span></span>
+        </div>
+    </div>
+        <div class="item">
+            <div class="line">
+                <span></span>
+            </div>
+            <div class="name">
+                <span class="win">安曼迪克</span>
+                <span>鹿邑三大</span>
+            </div>
+            <div class="num">
+                <span>2</span>
+                <span>0</span>
+            </div>
+            <div class="line">
+                <span></span>
+            </div>
+        </div>
+    </li>
+    <li data-column="3" data-num="3">
+        <div class="item">
+            <div class="line">
+                <span></span>
+            </div>
+            <div class="name">
+                <span class="win">安曼迪克</span>
+                <span>鹿邑三大</span>
+            </div>
+            <div class="num">
+                <span>2</span>
+                <span>0</span>
+            </div>
+            <div class="line">
+                <span></span>
+            </div>
+        </div>
+    </li>
+</ul>
+<script type="text/javascript">
+    function log2(value) {
+        if (value == 1)
+            return 0;
+        else
+            return 1+log2(value>>1);
+    };
+    var $container = $('.container');
+    var list = 4;
+
+
+    var i=0,j=0,count = 8,xMax,yMax;
+    xMax = log2(count)+1;
+    yMax = count;
+    for(i;i<xMax;i++){
+        yMax = count/Math.pow(2,i);
+        console.log(i,xMax,yMax);
+        for(j=0;j<yMax;j++){
+            console.log('第几列'+i+'第几行'+j+'!'+log2(count));
+        }
+    }
+
+</script>
+</body>
+</html>
